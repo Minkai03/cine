@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [PostController::class, 'index'])->name('welcome');
 
-Route::get('/', [PostController::class, 'index'])->name('Post.index');
+
 Route::get('Post/{pelicula}', [Postcontroller::class, 'show'])->name('Post.show');
 
 Route::get('/Cartelera', [Carteleracontroller::class, 'index'])->name('Cartelera.index');
