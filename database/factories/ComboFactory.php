@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\C_image;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 /**
@@ -23,8 +23,7 @@ class ComboFactory extends Factory
             'nombre' => $nombre,
             'slug' => Str::slug($nombre),
             'precio' => $this->faker->text(10),
-            'descripcion' => $this->faker->text(500),
-            'c_images_id' => C_image::Factory()->create()->id
+            'descripcion' => $this->faker->text(500)
         
         ];
     }

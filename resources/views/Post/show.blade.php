@@ -6,7 +6,7 @@
     </h1>
     <br>
     <div>
-    <img src="{{$pelicula->p_image->url}}" alt=""></div><br>
+    <img src="{{$pelicula->image->url}}" alt=""></div><br>
     <div>
         {{$pelicula->id}}
     </div>

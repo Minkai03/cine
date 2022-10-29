@@ -11,7 +11,7 @@ class HorarioController extends Controller
     public function index()
     {
         $horarios = Horario::all();
-        return view('admin.Horario.index',compact('Horarios'));
+        return view('admin.Horario.index',compact('horarios'));
     }
 
  
@@ -29,13 +29,13 @@ class HorarioController extends Controller
  
     public function show(Horario $horario)
     {
-        return view('admin.Horario.show',compact('Horario'));
+        return view('admin.Horario.show',compact('horario'));
     }
 
   
     public function edit(Horario $horario)
     {
-        return view('admin.Horario.edit',compact('Horario'));
+        return view('admin.Horario.edit',compact('horario'));
     }
 
     

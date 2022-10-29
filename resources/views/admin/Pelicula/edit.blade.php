@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-  @livewire('admin.user-index')
+  <p>Welcome to this beautiful admin panel.</p>
 @stop
 
 @section('css')

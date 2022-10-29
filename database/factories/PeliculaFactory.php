@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\Clasificacion;
 use App\Models\Genero;
 use App\Models\Horario;
-use App\Models\P_image;
+use App\Models\Image;
 use App\Models\Sala;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -34,7 +34,6 @@ class PeliculaFactory extends Factory
             'salas_id' => Sala::all()->random()->id,
             'generos_id' => Genero::all()->random()->id,
             'clasificacions_id' => Clasificacion::all()->random()->id,
-            'p_images_id' => P_image::Factory()->create()->id,
             'horarios_id' => Horario::all()->random()->id
         ];
     }

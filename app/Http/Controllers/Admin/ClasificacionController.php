@@ -12,7 +12,7 @@ class ClasificacionController extends Controller
     public function index()
     {
         $clasificacions = Clasificacion::all();
-        return view('admin.Clasificacion.index', compact('Clasificacions'));
+        return view('admin.Clasificacion.index', compact('clasificacions'));
     }
 
   
@@ -30,12 +30,12 @@ class ClasificacionController extends Controller
     
     public function show(Clasificacion $clasificacion)
     {
-        return view('admin.Clasificacion.show', compact('Clasificacion'));
+        return view('admin.Clasificacion.show', compact('clasificacion'));
     }
 
     public function edit(Clasificacion $clasificacion)
     {
-        return view('admin.Clasificacion.edit', compact('Clasificacion'));
+        return view('admin.Clasificacion.edit', compact('clasificacion'));
     }
 
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+
+
 class UsuarioController extends Controller
 {
  
@@ -28,13 +30,13 @@ class UsuarioController extends Controller
   
     public function show(User $usuario)
     {
-        return view('admin.Usuario.show', compact('Usuario'));
+        return view('admin.Usuario.show', compact('usuario'));
     }
 
  
     public function edit(User $usuario)
     {
-        return view('admin.Usuario.edit', compact('Usuario'));
+        return view('admin.Usuario.edit', compact('usuario'));
     }
 
  

@@ -3,11 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar imagen carrousel</h1>
+    <h1>Editar genero</h1>
 @stop
 
 @section('content')
-  @livewire('admin.user-index')
+  <p>Welcome to this beautiful admin panel.</p>
 @stop
 
 @section('css')

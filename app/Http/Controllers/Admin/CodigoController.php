@@ -12,7 +12,7 @@ class CodigoController extends Controller
     public function index()
     {
         $codigos = Codigo::all();
-        return view('admin.Codigo.index', compact('Codigos'));
+        return view('admin.Codigo.index', compact('codigos'));
     }
 
  
@@ -30,13 +30,13 @@ class CodigoController extends Controller
   
     public function show(Codigo $codigo)
     {
-        return view('admin.Codigo.show', compact('Codigo'));
+        return view('admin.Codigo.show', compact('codigo'));
     }
 
  
     public function edit(Codigo $codigo)
     {
-        return view('admin.Codigo.edit', compact('Codigo'));
+        return view('admin.Codigo.edit', compact('codigo'));
     }
 
    

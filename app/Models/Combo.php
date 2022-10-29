@@ -14,8 +14,8 @@ class Combo extends Model
         return $this->belongsTo(Entrada::class);
      }
 
-      //relacion  uno a uno 
-     public function c_image(){
-    return $this->belongsTo(C_image::class, 'c_images_id');
+      //relacion  uno a uno polimorfica
+     public function image(){
+    return $this->morphOne(Image::class, 'imageable');
 }
 }

@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'TicketUniverse')
 
 @section('content_header')
     <h1>tickets Universe</h1>
 @stop
 
 @section('content')
-  @livewire('admin.user-index')
+<p>Welcome to this beautiful admin panel.</p>
 @stop
 
 @section('css')

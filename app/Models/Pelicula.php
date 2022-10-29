@@ -22,10 +22,10 @@ public function clasificacion(){
     return $this->hasMany(Entrada::class);
  }
  
- //relacion muchos a uno 
-  public function p_image(){
-    return $this->belongsTo(P_image::class, 'p_images_id');
- }
+      //relacion  uno a uno polimorfica
+      public function image(){
+         return $this->morphOne(Image::class, 'imageable');
+     }
  
  //relacion muchos a uno 
  public function sala(){

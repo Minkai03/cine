@@ -312,19 +312,14 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Dashboard',
+            'text'        => 'Administrador',
             'route'         => 'admin.home',
             'icon'        => 'far fa-fw fa-file',
         ],
         ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Usuario',
-            'route'=> 'admin.Beneficio.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Pelicula imagenes',
-            'route'=> 'admin.Pimage.index',
+            'route'=> 'admin.Usuario.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -338,13 +333,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Promo imagenes',
-            'route'=> 'admin.Bimage.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'imagenen carrousel',
-            'route'=> 'admin.Carrimage.index',
+            'text' => 'Imagenes',
+            'route'=> 'admin.Image.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -358,8 +348,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Promos',
-            'route'  => 'admin.Promo.index',
+            'text' => 'Combos',
+            'route'  => 'admin.Combo.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -378,8 +368,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Tickets',
-            'route'  => 'admin.Ticket.index',
+            'text' => 'Entrada',
+            'route'  => 'admin.Entrada.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

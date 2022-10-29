@@ -12,7 +12,7 @@ class PeliculaController extends Controller
     public function index()
     {
         $peliculas = Pelicula::all();
-        return view('admin.Pelicula.index',compact('Peliculas'));
+        return view('admin.Pelicula.index',compact('peliculas'));
     }
 
    
@@ -29,13 +29,13 @@ class PeliculaController extends Controller
   
     public function show(Pelicula $pelicula)
     {
-        return view('admin.Pelicula.show' ,compact('Pelicula'));
+        return view('admin.Pelicula.show' ,compact('pelicula'));
     }
 
    
     public function edit(Pelicula $pelicula)
     {
-        return view('admin.Pelicula.edit' ,compact('Pelicula'));
+        return view('admin.Pelicula.edit' ,compact('pelicula'));
     }
 
 

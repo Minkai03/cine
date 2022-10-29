@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Genero;
+
 class GeneroController extends Controller
 {
    
     public function index()
     {
         $generos = Genero::all();
-        return view('admin.Genero.index', compact('Genero'));
+        return view('admin.Genero.index', compact('generos'));
     }
 
  
@@ -29,11 +30,13 @@ class GeneroController extends Controller
 
     public function show(Genero $genero)
     {
-        return view('admin.Genero.show', compact('Genero'));
+        return view('admin.Genero.show', compact('genero'));
     }
+
+
     public function edit(Genero $genero)
     {
-        return view('admin.Genero.edit', compact('Genero'));
+        return view('admin.Genero.edit', compact('genero'));
     }
 
     public function update(Request $request, Genero $genero)
