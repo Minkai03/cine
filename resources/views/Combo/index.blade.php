@@ -17,7 +17,7 @@
     </div>
 
                     <article class="w-full h-80 bg-cover bg-center">
-                        <img src="{{$combo->c_image->url}}" alt="hola">
+                        <img src="{{$combo->image->url}}" alt="hola">
                     </article>
                 @endforeach 
         </div>
