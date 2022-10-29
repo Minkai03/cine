@@ -11,7 +11,7 @@
                     </div>
                     
                     <article class="w-full h-80 bg-cover bg-center">
-                        <img src="{{$pelicula->p_image->url}}" alt="hola">
+                        <img src="{{$pelicula->Image->url}}" alt="hola">
                     </article>
                 @endforeach 
         </div>

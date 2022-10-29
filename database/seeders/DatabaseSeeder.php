@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Beneficio;
 use App\Models\Butaca;
 use App\Models\Clasificacion;
 use App\Models\Codigo;
@@ -24,8 +23,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
 
-        Storage::makeDirectory('public/peliculas');
-        Storage::makeDirectory('public/combos');
+        Storage::makeDirectory('public/image');
 
         Genero::factory(5)->create();
         Hora::factory(4)->create();
@@ -33,9 +31,9 @@ class DatabaseSeeder extends Seeder
        Horario::factory(8)->create();
        Butaca::factory(22)->create();
        Codigo::factory(4)->create();
-       Beneficio::factory(4)->create();
+       $this->call(BeneficioSeeder::class);
        $this->call(ComboSeeder::class);
-       Sala::factory(4)->create();
+        Sala::factory(4)->create();
        $this->call(PeliculaSeeder::class);
        Entrada::factory(10)->create();
     }

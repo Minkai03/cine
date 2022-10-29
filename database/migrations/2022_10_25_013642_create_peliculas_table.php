@@ -33,8 +33,8 @@ return new class extends Migration
             $table->unsignedBigInteger('clasificacions_id');
             $table->foreign('clasificacions_id')->references('id')->on('clasificacions');
 
-            $table->unsignedBigInteger('p_images_id');
-            $table->foreign('p_images_id')->references('id')->on('p_images')->onDelete('cascade');
+            $table->unsignedBigInteger('Images_id');
+            $table->foreign('Images_id')->references('id')->on('Images')->onDelete('cascade');
 
             $table->unsignedBigInteger('horarios_id');
             $table->foreign('horarios_id')->references('id')->on('horarios');

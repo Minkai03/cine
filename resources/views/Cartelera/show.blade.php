@@ -6,7 +6,7 @@
     </h1>
     <br>
     <div>
-    <img src="{{$pelicula->p_image->url}}" alt=""></div><br>
+    <img src="{{$pelicula->image->url}}" alt=""></div><br>
     <div>
         {{$pelicula->id}}
     </div>
@@ -44,7 +44,7 @@
     </div>
     <br>
     <div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/EDK2FtU5oxg"></iframe>
+    <img src="{{$pelicula->trailer_url}}" alt=""></div><br>
     </div>
 
 
