@@ -20,16 +20,17 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
+            @livewire('header')
             @livewire('navigation')
             @livewire('carrusel')
-
+        
 
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
         </div>
-
+        @livewire('footer')
         @stack('modals')
 
         @livewireScripts

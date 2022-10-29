@@ -26,11 +26,9 @@
       </div>
 
 
-      <!-- logo y nombre-->
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-        <a href="/" class="flex flex-shrink-0 items-center">
-          <img class="block h-8 w-auto lg:hidden" src="#" ><h1 class="text text-white"> Tickets Universe</h1>
-
+       <!-- logo y nombre-->
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+  
         <!-- menu -->
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
