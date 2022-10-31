@@ -21,7 +21,7 @@ class ClasificacionFactory extends Factory
         return [
             'nombre' => $nombre,
             'slug' => Str::slug($nombre),
-            'descripcion' => $this->faker->text(500)
+            'descripcion' => $this->faker->text(100)
        
         ];
     }

@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\Clasificacion;
 use App\Models\Genero;
 use App\Models\Horario;
-use App\Models\Image;
 use App\Models\Sala;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -26,10 +25,10 @@ class PeliculaFactory extends Factory
         return [
             'nombre' => $nombre,
             'slug' => Str::slug($nombre),
-            'sinopsis' => $this->faker->text(200),
+            'sinopsis' => $this->faker->text(100),
             'director' => $this->faker->text(20),
             'reparto' => $this->faker->text(100),
-            'duracion' => $this->faker->time(2),
+            'duracion' => $this->faker->time(),
             'trailer_url' => $this->faker->text(20),
             'salas_id' => Sala::all()->random()->id,
             'generos_id' => Genero::all()->random()->id,

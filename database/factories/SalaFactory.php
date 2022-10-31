@@ -22,8 +22,7 @@ class SalaFactory extends Factory
 
         return [
             'nombre' => $nombre,
-            'slug' => Str::slug($nombre),
-            'butacas_id' => Butaca::all()->random()->id
+            'slug' => Str::slug($nombre)
         ];
     }
 }

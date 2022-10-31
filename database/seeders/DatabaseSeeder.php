@@ -2,12 +2,8 @@
 
 namespace Database\Seeders;
 use App\Models\Butaca;
-use App\Models\Clasificacion;
 use App\Models\Codigo;
-use App\Models\Entrada;
-use App\Models\Genero;       
-use App\Models\Hora;
-use App\Models\Horario;
+use App\Models\Entrada;    
 use App\Models\Sala;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
@@ -25,15 +21,15 @@ class DatabaseSeeder extends Seeder
 
         Storage::makeDirectory('public/image');
 
-        Genero::factory(5)->create();
-        Hora::factory(4)->create();
-       Clasificacion::factory(4)->create();
-       Horario::factory(8)->create();
+        $this->call(diaseeder::class);
+        $this->call(GeneroSeeder::class);
+        $this->call(ClasificacionSeeder::class);
+        $this->call(HorarioSeeder::class);
+        Sala::factory(2)->create();
        Butaca::factory(22)->create();
        Codigo::factory(4)->create();
        $this->call(BeneficioSeeder::class);
        $this->call(ComboSeeder::class);
-        Sala::factory(4)->create();
        $this->call(PeliculaSeeder::class);
        Entrada::factory(10)->create();
     }

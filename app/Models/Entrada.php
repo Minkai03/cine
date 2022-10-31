@@ -9,6 +9,13 @@ class Entrada extends Model
 {
     use HasFactory;
 
+    public function getRouteKeyName()
+    {
+      return 'slug';
+    }
+
+    protected $guarded = ['id', 'created_at', 'updated_at'];
+
      // muchos a uno
      public function user(){
         return $this->belongsTo(User::class, 'users_id');

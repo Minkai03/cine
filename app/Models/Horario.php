@@ -9,13 +9,21 @@ class Horario extends Model
 {
     use HasFactory;
 
+    public function getRouteKeyName()
+    {
+      return 'slug';
+    }
+
+    protected $guarded = ['id', 'created_at', 'updated_at'];
+
+
         //relacion muchos a uno
         public function pelicula(){
             return $this->belongsTo(Pelicula::class);
          }
     
-           //relacion uno a muchos
-        public function horas(){
-            return $this->hasMany(Hora::class, 'horas_id');
+           //relacion muchos a muchos
+        public function dias(){
+            return $this->belongsToMany(Dia::class, 'dias_id');
          }
 }

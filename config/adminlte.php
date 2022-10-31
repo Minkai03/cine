@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>Tickets</b>Universe',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'https://png.pngtree.com/element_our/20190531/ourlarge/pngtree-film-festival-logo-popcorn-and-film-free-png-image_1311154.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'https://png.pngtree.com/element_our/20190531/ourlarge/pngtree-film-festival-logo-popcorn-and-film-free-png-image_1311154.jpg',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -148,9 +148,9 @@ return [
     |
     */
 
-    'layout_topnav' => null,
+    'layout_topnav' => true,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -194,7 +194,7 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-dark navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -311,125 +311,42 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
-            'text'        => 'Administrador',
-            'route'         => 'admin.home',
-            'icon'        => 'far fa-fw fa-file',
-        ],
-        ['header' => 'ADMINISTRADOR'],
+
+    
         [
             'text' => 'Usuario',
             'route'=> 'admin.Usuario.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Genero',
-            'route'=> 'admin.Genero.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Clasificacion',
-            'route'=> 'admin.Clasificacion.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Imagenes',
-            'route'=> 'admin.Image.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Codigos',
-            'route'  => 'admin.Codigo.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
             'text' => 'Beneficios',
             'route'  => 'admin.Beneficio.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => '',
         ],
         [
             'text' => 'Combos',
             'route'  => 'admin.Combo.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => '',
         ],
         [
             'text' => 'Horarios',
             'route'  => 'admin.Horario.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => '',
         ],
         [
             'text' => 'Salas',
             'route'  => 'admin.Sala.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => '',
         ],
         [
             'text' => 'Peliculas',
             'route'  => 'admin.Pelicula.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => '',
         ],
         [
             'text' => 'Entrada',
             'route'  => 'admin.Entrada.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'icon' => '',
         ],
     ],
 

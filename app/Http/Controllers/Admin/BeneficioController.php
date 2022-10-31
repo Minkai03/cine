@@ -31,7 +31,7 @@ class BeneficioController extends Controller
         ]);
 
         $beneficio = Beneficio::create($request->all());
-            return redirect()->route('admin.Beneficio.edit', $beneficio)->with('info', 'Se creo con exito');
+            return redirect()->route('admin.Beneficio.index', $beneficio)->with('info', 'Se creo con exito');
     }
 
  
@@ -56,7 +56,7 @@ class BeneficioController extends Controller
         ]);
 
         $beneficio->update($request->all());
-            return redirect()->route('admin.Beneficio.edit', $beneficio)->with('info', 'Se actualizo con exito');
+            return redirect()->route('admin.Beneficio.index', $beneficio)->with('info', 'Se actualizo con exito');
     }
 
    

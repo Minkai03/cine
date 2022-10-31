@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 /**
@@ -22,8 +21,8 @@ class ComboFactory extends Factory
         return [
             'nombre' => $nombre,
             'slug' => Str::slug($nombre),
-            'precio' => $this->faker->text(10),
-            'descripcion' => $this->faker->text(500)
+            'precio' => $this->faker->text(100),
+            'descripcion' => $this->faker->text(100)
         
         ];
     }

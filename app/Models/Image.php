@@ -11,6 +11,7 @@ class Image extends Model
 
     //relacion polimorfica
 
+
     public function imageable(){
         return $this->morphTo();
     }

@@ -9,7 +9,7 @@ class Beneficio extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'slug', 'descripcion'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
       
      //relacion uno a muchos
      public function entradas(){

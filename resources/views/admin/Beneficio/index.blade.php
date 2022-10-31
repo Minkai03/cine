@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'TicketUniverse')
 
 @section('content_header')
     <h1>Lista de beneficios</h1>
@@ -25,6 +25,9 @@
                 <tr>
                     <td>id</td>
                     <td>Nombre</td>
+                    <td>Descripcion</td>
+                    <td>Descuento</td>
+                    <td>Imagenes</td>
                     <td colspan="2"></td>
                 </tr>
             </thead>
@@ -33,6 +36,9 @@
                 <tr>
                     <td>{{$beneficio->id}}</td>
                     <td>{{$beneficio->nombre}}</td>
+                    <td>{{$beneficio->descripcion}}</td>
+                    <td>{{$beneficio->descuento}}</td>
+                    <td></td>
                     <td width="10px">
                         <a class="btn btn-primary btn-sm" href="{{route('admin.Beneficio.edit', $beneficio)}}">Editar</a>
                     </td>

@@ -1,13 +1,59 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'TicketUniverse')
 
 @section('content_header')
-    <h1>Editar Combo</h1>
+    <h1>Editar combo</h1>
 @stop
 
 @section('content')
-  <p>Welcome to this beautiful admin panel.</p>
+
+@if (session('info'))
+    <div class="alert alert-success">
+        <strong>{{session('info')}}</strong>
+    </div>
+@endif
+
+<div class="card">
+    <div class="card-body">
+    {!! Form::model($combo , ['route' => ['admin.Combo.update', $combo], 'method' => 'put']) !!}
+    <div class="form-group">
+                {!! Form::label('nombre', 'Nombre') !!}
+                {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder' => 'ingrese el nombre']) !!}
+
+                @error('nombre')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+            <div class="form-group">
+                {!! Form::label('slug', 'Slug') !!}
+                {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'ingrese el slug', 'readonly']) !!}
+
+                @error('slug')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+            <div class="form-group">
+                {!! Form::label('descripcion', 'Descripcion') !!}
+                {!! Form::text('descripcion', null, ['class' => 'form-control', 'placeholder' => 'ingrese la descripcion']) !!}
+
+                @error('descripcion')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+            <div class="form-group">
+                {!! Form::label('precio', 'Precio') !!}
+                {!! Form::text('precio', null, ['class' => 'form-control', 'placeholder' => 'ingrese el precio']) !!}
+
+                @error('precio')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+            
+          {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}  
+          <a class="btn btn-danger" href="{{route('admin.Combo.index', $combo)}}">Cancelar</a>
+    </div>
+</div>
 @stop
 
 @section('css')
@@ -15,5 +61,16 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
-@stop
+<script src="{{asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
+
+<script>
+
+    $(document).ready( function() {
+        $("#nombre").stringToSlug({
+            setEvents: 'keyup keydown blur',
+            getPut: '#slug',
+            space: '-'
+        });
+    });
+</script>
+@endsection

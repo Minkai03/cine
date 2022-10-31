@@ -24,7 +24,14 @@ class ComboController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'slug' => 'required|unique:combos',
+            'descripcion' => 'required'
+        ]);
+
+        $combo = Combo::create($request->all());
+            return redirect()->route('admin.Combo.index', $combo)->with('info', 'Se creo con exito');
     }
 
    
@@ -42,12 +49,19 @@ class ComboController extends Controller
   
     public function update(Request $request, Combo $combo)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'slug' => "required|unique:combos,slug,$combo->id"
+        ]);
+
+        $combo->update($request->all());
+            return redirect()->route('admin.Combo.index', $combo)->with('info', 'Se actualizo con exito');
     }
 
   
-    public function destroy($id)
+    public function destroy(Combo $combo)
     {
-        //
+        $combo->delete();
+        return redirect()->route('admin.Combo.index')->with('info', 'Se elimino con exito');
     }
 }

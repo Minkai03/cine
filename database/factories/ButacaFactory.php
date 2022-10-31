@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Sala;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 /**
@@ -21,7 +22,8 @@ class ButacaFactory extends Factory
         return [
             'nombre' => $nombre,
             'slug' => Str::slug($nombre),
-            'disponible' =>  $this->faker->randomElement([1, 2])
+            'disponible' =>  $this->faker->randomElement([1, 2]),
+             'salas_id' => Sala::all()->random()->id
        ];
     }
 }

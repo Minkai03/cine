@@ -18,14 +18,22 @@ class ClasificacionController extends Controller
   
     public function create()
     {
-        return view('admin.Clasificacion.crate');
+        return view('admin.Clasificacion.create');
     }
 
    
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'slug' => 'required|unique:clasificacions',
+            'descripcion' => 'required'
+        ]);
+
+        $clasificacion = Clasificacion::create($request->all());
+            return redirect()->route('admin.Clasificacion.index', $clasificacion)->with('info', 'Se creo con exito');
     }
+    
 
     
     public function show(Clasificacion $clasificacion)
@@ -41,12 +49,20 @@ class ClasificacionController extends Controller
 
     public function update(Request $request, Clasificacion $clasificacion)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'slug' => "required|unique:clasificacions,slug,$clasificacion->id",
+            'descripcion' => 'required'
+        ]);
+
+        $clasificacion->update($request->all());
+            return redirect()->route('admin.Clasificacion.index', $clasificacion)->with('info', 'Se actualizo con exito');
     }
 
    
     public function destroy(Clasificacion $clasificacion)
     {
-        //
+        $clasificacion->delete();
+        return redirect()->route('admin.Clasificacion.index')->with('info', 'Se elimino con exito');
     }
 }

@@ -9,9 +9,10 @@ class Sala extends Model
 {
     use HasFactory;
 
+    
           //uno a muchos
           public function butacas(){
-            return $this->hasMany(Butaca::class, 'butacas_id');
+            return $this->hasMany(Butaca::class);
          }
     
          //relacion uno a uno

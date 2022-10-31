@@ -8,6 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Pelicula extends Model
 {
     use HasFactory;
+   
+    public function getRouteKeyName()
+    {
+      return 'slug';
+    }
+
+    protected $guarded = ['id', 'created_at', 'updated_at'];
+
+
     
     //muchas a uno
 public function genero(){

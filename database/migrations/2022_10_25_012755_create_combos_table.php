@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('slug');
             $table->string('precio');
             $table->longText('descripcion');
-            $table->unsignedBigInteger('images_id');
-            $table->foreign('images_id')->references('id')->on('images')->onDelete('cascade');
             $table->timestamps();
         });
     }

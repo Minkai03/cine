@@ -12,8 +12,8 @@ class UsuarioController extends Controller
  
     public function index()
     {
-        $usuarios = User::all();
-        return view('admin.Usuario.index', compact('usuarios'));
+        $users = User::all();
+        return view('admin.Usuario.index', compact('users'));
     }
 
     public function create()
@@ -24,30 +24,45 @@ class UsuarioController extends Controller
     
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required'
+        ]);
+
+        $user = User::create($request->all());
+            return redirect()->route('admin.Usuario.index', $user)->with('info', 'Se creo con exito');
+    }
+    
+
+    
+    public function show(User $user)
+    {
+        return view('admin.Usuario.show', compact('user'));
     }
 
-  
-    public function show(User $usuario)
+    public function edit(User $user)
     {
-        return view('admin.Usuario.show', compact('usuario'));
+        return view('admin.Usuario.edit', compact('user'));
     }
 
- 
-    public function edit(User $usuario)
+
+    public function update(Request $request, User $user)
     {
-        return view('admin.Usuario.edit', compact('usuario'));
+        $request->validate([
+            'name' => 'required',
+            'email' => "required|unique:users,email,$user->id",
+            'password' => 'required'
+        ]);
+
+        $user->update($request->all());
+            return redirect()->route('admin.Usuario.index', $user)->with('info', 'Se actualizo con exito');
     }
 
- 
-    public function update(Request $request, User $usuario)
+   
+    public function destroy(User $user)
     {
-        //
-    }
-
- 
-    public function destroy(User $usuario)
-    {
-        //
+        $user->delete();
+        return redirect()->route('admin.Usuario.index')->with('info', 'Se elimino con exito');
     }
 }

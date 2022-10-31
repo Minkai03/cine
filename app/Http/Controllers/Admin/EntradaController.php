@@ -25,7 +25,14 @@ class EntradaController extends Controller
   
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'slug' => 'required|unique:entradas',
+            'precio' => 'required'
+        ]);
+
+        $entrada = Entrada::create($request->all());
+            return redirect()->route('admin.Entrada.index', $entrada)->with('info', 'Se creo con exito');
     }
 
  
@@ -43,12 +50,20 @@ class EntradaController extends Controller
     
     public function update(Request $request, Entrada $entrada)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'slug' => "required|unique:entradas,slug,$entrada->id",
+            'precio' => 'required'
+        ]);
+
+        $entrada->update($request->all());
+            return redirect()->route('admin.Entrada.index', $entrada)->with('info', 'Se actualizo con exito');
     }
 
   
-    public function destroy($id)
+    public function destroy(Entrada $entrada)
     {
-        //
+        $entrada->delete();
+        return redirect()->route('admin.Entrada.index')->with('info', 'Se elimino con exito');
     }
 }

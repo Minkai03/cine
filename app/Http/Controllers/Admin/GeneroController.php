@@ -24,7 +24,13 @@ class GeneroController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'slug' => 'required|unique:generos'
+        ]);
+
+        $genero = Genero::create($request->all());
+            return redirect()->route('admin.Genero.index', $genero)->with('info', 'Se creo con exito');
     }
 
 
@@ -41,12 +47,19 @@ class GeneroController extends Controller
 
     public function update(Request $request, Genero $genero)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'slug' => "required|unique:generos,slug,$genero->id"
+        ]);
+
+        $genero->update($request->all());
+            return redirect()->route('admin.Genero.index', $genero)->with('info', 'Se actualizo con exito');
     }
 
 
     public function destroy(Genero $genero)
     {
-        //
+        $genero->delete();
+        return redirect()->route('admin.Genero.index')->with('info', 'Se elimino con exito');
     }
 }

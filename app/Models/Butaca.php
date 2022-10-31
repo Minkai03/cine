@@ -10,6 +10,6 @@ class Butaca extends Model
     use HasFactory;
        //muchos a uno
        public function sala(){
-        return $this->belongsTo(Sala::class);
+        return $this->belongsTo(Sala::class, 'salas_id');
      }
 }

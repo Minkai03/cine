@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('horarios', function (Blueprint $table) {
             $table->id(); 
-            $table->string('fecha');
-            $table->string('slug');
+            $table->time('hora');
             $table->timestamps();
             
 
-            $table->unsignedBigInteger('horas_id');
-            $table->foreign('horas_id')->references('id')->on('horas');
+            $table->unsignedBigInteger('dias_id');
+            $table->foreign('dias_id')->references('id')->on('dias');
         });
     }
 
