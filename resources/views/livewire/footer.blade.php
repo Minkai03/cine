@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+  
+  .footer {
+        
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color:bisque;
+    text-align:center;
+  }
 ul.breadcrumb {
   padding: 10px 16px;
   list-style: none;
-  background-color: #eee;
 }
 ul.breadcrumb li {
   display: inline;
@@ -16,25 +23,22 @@ ul.breadcrumb li+li:before {
   color: black;
   content: "/\00a0";
 }
-ul.breadcrumb li a {
-  color: #0275d8;
-  text-decoration: none;
-}
+
 ul.breadcrumb li a:hover {
-  color: #01447e;
+  color:white;
   text-decoration: underline;
 }
 </style>
 </head>
-<body>
 
-<ul class="breadcrumb">
-  <li><a href="/">Inicio</a></li>
-  <li><a href="/Cartelera">Cartelera</a></li>
-  <li><a href="/Horario">Horario</a></li>
-  <li><a href="/Beneficio">Beneficio</a></li>
-  <li><a href="/Combo">Combo</a></li>
-</ul>
-
+<div class="footer">
+  <ul class="breadcrumb">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/Cartelera">Cartelera</a></li>
+    <li><a href="/Horario">Horario</a></li>
+    <li><a href="/Beneficio">Beneficio</a></li>
+    <li><a href="/Combo">Combo</a></li>
+  </ul>
+</div>
 </body>
 </html>
