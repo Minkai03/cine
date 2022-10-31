@@ -1,9 +1,4 @@
 
-
-
-<!DOCTYPE html>
-<html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {box-sizing: border-box}
@@ -86,6 +81,9 @@ img {vertical-align: middle;}
   animation-name: fade;
   animation-duration: 1.5s;
 }
+  .carrousel{
+    width: 960;
+  }
 
 @keyframes fade {
   from {opacity: .7} 
@@ -97,8 +95,7 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 </style>
-</head>
-<body>
+<div class="carrousel">
 
 <div class=" mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 
@@ -182,6 +179,5 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
+</div>
 
-</body>
-</html> 

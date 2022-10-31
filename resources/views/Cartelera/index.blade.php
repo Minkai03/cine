@@ -1,3 +1,14 @@
+<style>
+.main{
+    margin: auto;
+    margin-top: 60px;
+    width: 1200;
+    height: 1055;
+    background-color: RoyalBlue;
+    }
+</style>
+
+<div class="main">
 <x-app-layout>
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 py-6">
         
@@ -17,3 +28,4 @@
         </div>
     </div>
 </x-app-layout>  
+</div>
