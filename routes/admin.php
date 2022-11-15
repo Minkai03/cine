@@ -31,4 +31,4 @@ Route::resource('pelicula', PeliculaController::class)->names('admin.Pelicula');
 Route::resource('combo', ComboController::class)->names('admin.Combo');
 Route::resource('sala', SalaController::class)->names('admin.Sala');
 Route::resource('entrada', EntradaController::class)->names('admin.Entrada');
-Route::resource('user', UsuarioController::class)->names('admin.Usuario');
+Route::resource('usuario', UsuarioController::class)->names('admin.Usuario');

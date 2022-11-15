@@ -16,8 +16,8 @@
 
 <div class="card">
     <div class="card-body">
-    {!! Form::model($user , ['route' => ['admin.Usuario.update', $user], 'method' => 'put']) !!}
-    <div class="form-group">
+        {!! Form::model($user , ['route' => ['admin.Usuario.update', $user], 'method' => 'put']) !!}
+            <div class="form-group">
                 {!! Form::label('name', 'Nombre') !!}
                 {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'ingrese el nombre']) !!}
 
@@ -37,10 +37,22 @@
                 {!! Form::label('password', 'Contraseña') !!}
                 {!! Form::text('password', null, ['class' => 'form-control', 'placeholder' => 'ingrese la Contraseña']) !!}
             </div>
-            
-          {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}  
+            <div class="form-group">
+                <p class="h5">Listado de roles</p>
+                
+                @foreach ($roles as $role)
+                    <div>
+                        <label>
+                            {!! Form::checkbox('roles[]', $role->id, null, ['class'=>'mr-1']) !!}
+                            {{$role->name}}
+                        </label>
+                    </div>
 
-          <a class="btn btn-danger" href="{{route('admin.Usuario.index', $user)}}">Cancelar</a>
+                @endforeach
+            </div>
+          {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
+          {!! Form::close() !!}
+        <a class="btn btn-danger" href="{{route('admin.Usuario.index', $user)}}">Cancelar</a>
        
     </div>
 </div>

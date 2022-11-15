@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 
 class UsuarioController extends Controller
@@ -43,7 +44,8 @@ class UsuarioController extends Controller
 
     public function edit(User $user)
     {
-        return view('admin.Usuario.edit', compact('user'));
+        $roles=Role::all();
+        return view('admin.Usuario.edit', compact('user', 'roles'));
     }
 
 
@@ -54,7 +56,7 @@ class UsuarioController extends Controller
             'email' => "required|unique:users,email,$user->id",
             'password' => 'required'
         ]);
-
+        $user->roles()->sync($request->roles);
         $user->update($request->all());
             return redirect()->route('admin.Usuario.index', $user)->with('info', 'Se actualizo con exito');
     }
