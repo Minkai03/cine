@@ -61,7 +61,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name'=>'admin.Horario.edit'])->syncRoles([$role1]);
         Permission::create(['name'=>'admin.Horario.destroy'])->syncRoles([$role1]);
 
-        Permission::create(['name'=>'admin.Pelicula.index'])->syncRoles([$role1]);
+        Permission::create(['name'=>'admin.Pelicula.index'])->syncRoles([$role1, $role2]);
         Permission::create(['name'=>'admin.Pelicula.create'])->syncRoles([$role1]);
         Permission::create(['name'=>'admin.Pelicula.edit'])->syncRoles([$role1]);
         Permission::create(['name'=>'admin.Pelicula.destroy'])->syncRoles([$role1]);

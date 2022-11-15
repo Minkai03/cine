@@ -3,6 +3,9 @@
 @section('title', 'TicketUniverse')
 
 @section('content_header')
+    @can('admin.Pelicula.create')
+        <a class="btn btn-primary btn-sm-float-right" href="{{route('admin.Pelicula.create')}}">Crear Nuevo</a>
+    @endcan
     <h1>Lista de peliculas</h1>
 @stop
 
@@ -16,7 +19,7 @@
 
 <div class="card">
 <div class="card-header">
-<a class="btn btn-primary " href="{{route('admin.Pelicula.create')}}">Crear Nuevo</a>
+
 </div>
 
     <div class="card-body">
@@ -54,14 +57,18 @@
                     </tr>
                     <tr >
                         <td>
-                        <a class="btn btn-primary btn-sm" href="{{route('admin.Pelicula.edit', $pelicula)}}">Editar</a>
+                        @can('admin.Pelicula.create')
+                            <a class="btn btn-primary btn-sm" href="{{route('admin.Pelicula.edit', $pelicula)}}">Editar</a>
+                        @endcan
                     </td>
                     <td >
+                        @can('admin.Pelicula.destroy')
                         <form action="{{route('admin.Pelicula.destroy', $pelicula)}}" method="POST">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                         </form>
+                        @endcan
                         </td>
                     </tr>
                 </tr>

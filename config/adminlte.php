@@ -317,36 +317,45 @@ return [
             'text' => 'Usuario',
             'route'=> 'admin.Usuario.index',
             'icon' => 'fas fa-fw fa-user',
+            'can'   =>'admin.home',
+            'can'   =>'admin.Usuario.index'
         ],
         [
+            
             'text' => 'Beneficios',
             'route'  => 'admin.Beneficio.index',
             'icon' => '',
+            'can'   =>'admin.Beneficios.index'
         ],
         [
             'text' => 'Combos',
             'route'  => 'admin.Combo.index',
             'icon' => '',
+            'can'   =>'admin.Combos.index'
         ],
         [
             'text' => 'Horarios',
             'route'  => 'admin.Horario.index',
             'icon' => '',
+            'can'   =>'admin.Horario.index'
         ],
         [
             'text' => 'Salas',
             'route'  => 'admin.Sala.index',
             'icon' => '',
+            'can'   =>'admin.Salas.index'
         ],
         [
             'text' => 'Peliculas',
             'route'  => 'admin.Pelicula.index',
             'icon' => '',
+            'can'   =>'admin.Pelicula.index'
         ],
         [
             'text' => 'Entrada',
             'route'  => 'admin.Entrada.index',
             'icon' => '',
+            'can'   =>'admin.Entrada.index'
         ],
     ],
 
